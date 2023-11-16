@@ -3,7 +3,7 @@ import Image from "next/image";
 // import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import GoogleMapReact from "google-map-react";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const AnyReactComponent = ({ text }: { text: String }) => <div>{text}</div>;
 
 export default function Home() {
   // const { isLoaded } = useJsApiLoader({
