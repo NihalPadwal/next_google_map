@@ -12,7 +12,7 @@ import { useRef, useState } from "react";
 
 export default function Home() {
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_OWN || "",
+    googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_TING || "",
     libraries: ["places"],
   });
 
