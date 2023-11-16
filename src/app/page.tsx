@@ -3,7 +3,15 @@ import Image from "next/image";
 // import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import GoogleMapReact from "google-map-react";
 
-const AnyReactComponent = ({ text }: { text: String }) => <div>{text}</div>;
+const AnyReactComponent = ({
+  text,
+  lat,
+  lng,
+}: {
+  text: String;
+  lat: number;
+  lng: number;
+}) => <div>{text}</div>;
 
 export default function Home() {
   // const { isLoaded } = useJsApiLoader({
@@ -48,7 +56,7 @@ export default function Home() {
       )} */}
 
       <GoogleMapReact
-        bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_MAPS_API_TING }}
+        bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_MAPS_API_TING || "" }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
