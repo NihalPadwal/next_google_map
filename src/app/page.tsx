@@ -17,6 +17,8 @@ export default function Home() {
   });
 
   const center = { lat: 48.8584, lng: 2.2945 };
+  const valueofOrigin = { lat: 48.8584, lng: 2.2945 };
+  const valueOfDestination = { lat: 48.8584, lng: 2.2945 };
 
   const [map, setMap] = useState<google.maps.Map>();
   const [directionResponse, setDirectionResponse] = useState<any>(null);
