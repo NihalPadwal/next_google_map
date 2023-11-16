@@ -4,7 +4,7 @@ import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 
 export default function Home() {
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_TING || "",
+    googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_OWN || "",
   });
 
   const center = { lat: 48.8584, lng: 2.2945 };
