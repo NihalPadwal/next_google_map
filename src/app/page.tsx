@@ -1,15 +1,26 @@
 "use client";
 import Image from "next/image";
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+// import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import GoogleMapReact from "google-map-react";
+
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export default function Home() {
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_OWN || "",
-  });
+  // const { isLoaded } = useJsApiLoader({
+  //   googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_OWN || "",
+  // });
 
-  const center = { lat: 48.8584, lng: 2.2945 };
+  // const center = { lat: 48.8584, lng: 2.2945 };
 
-  console.log(isLoaded);
+  // console.log(isLoaded);
+
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627,
+    },
+    zoom: 11,
+  };
 
   return (
     <main className="min-h-screen ">
@@ -26,7 +37,7 @@ export default function Home() {
         </div>
         <button className="bg-amber-700 p-2 rounded-xl">Find Route</button>
       </div>
-      {isLoaded && (
+      {/* {isLoaded && (
         <div className="map w-screen h-screen">
           <GoogleMap
             center={center}
@@ -34,7 +45,15 @@ export default function Home() {
             mapContainerStyle={{ width: "100%", height: "100%" }}
           ></GoogleMap>
         </div>
-      )}
+      )} */}
+
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_MAPS_API_TING }}
+        defaultCenter={defaultProps.center}
+        defaultZoom={defaultProps.zoom}
+      >
+        <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
+      </GoogleMapReact>
     </main>
   );
 }
